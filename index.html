@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌟 My Reading Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌟 My Reading Buddy</h1>
+      <div class="subtitle">Let's read together and have fun! 📚✨</div>
+    </div>
+
+    <!-- Step 1: Add Text -->
+    <div class="step">
+      <div class="step-header">
+        <div class="step-number">1</div>
+        <div>📝 Choose a story or paste your own</div>
+      </div>
+      
+      <!-- NEW: Passage Selector -->
+      <div class="passage-selector-container">
+          <label for="passageSelector">🚀 Choose a pre-made story:</label>
+          <select id="passageSelector">
+              <option value="">-- Select a passage --</option>
+          </select>
+      </div>
+
+      <div class="divider">OR</div>
+
+      <textarea id="textInput" placeholder="Once upon a time... ✨
+
+Paste your favorite story, homework, or any text you want to practice reading!"></textarea>
+      <!-- The onclick attribute has been removed from this button -->
+      <button class="big-button">
+        🚀 Let's Start Reading!
+      </button>
+    </div>
+
+    <!-- Step 2: Controls (hidden initially) -->
+    <div class="step hidden" id="controlsStep">
+      <div class="step-header">
+        <div class="step-number">2</div>
+        <div>🎮 Reading Controls</div>
+      </div>
+      
+      <div class="control-buttons">
+        <!-- The onclick attributes have been removed from these buttons -->
+        <button class="control-btn" id="playBtn">▶️ Start Reading</button>
+        <button class="control-btn stop" id="stopBtn" disabled>⏹️ Stop</button>
+        <button class="control-btn" id="resetBtn" disabled>🔄 Start Over</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Speed Settings (hidden initially) -->
+    <div class="step hidden" id="speedStep">
+      <div class="step-header">
+        <div class="step-number">3</div>
+        <div>⚡ Make it Just Right for You!</div>
+      </div>
+      
+      <div class="speed-controls">
+        <div class="speed-title">🐢 Slow ← → Fast 🐰</div>
+        
+        <div class="speed-row">
+          <div class="speed-label">
+            🏃‍♂️ Reading Speed:
+          </div>
+          <div class="slider-container">
+            <input type="range" class="slider" id="speedControl" min="0.5" max="2.5" step="0.25" value="1">
+            <div class="speed-display" id="speedDisplay">1x</div>
+          </div>
+        </div>
+        
+        <div class="speed-row">
+          <div class="speed-label">
+            ⏱️ Word Pause:
+          </div>
+          <div class="slider-container">
+            <input type="range" class="slider" id="pauseControl" min="50" max="800" step="50" value="50">
+            <div class="speed-display" id="pauseDisplay">50ms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Section (hidden initially) -->
+    <div class="progress-section hidden" id="progressSection">
+      <div class="progress-title">📊 Your Reading Progress</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-number" id="wordCount">0</span>
+          <span class="stat-label">Total Words</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="currentPosition">0</span>
+          <span class="stat-label">Current Word</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="remainingWords">0</span>
+          <span class="stat-label">Words Left</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reading Canvas -->
+    <div id="textCanvas">
+      <div class="empty-state">
+        <span class="empty-emoji">📖</span>
+        Your story will appear here when you're ready!<br>
+        <small>Follow the steps above to get started 👆</small>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    <div class="tips">
+      <div class="tips-title">🎯 Super Reading Tips!</div>
+      <div class="tip-item">
+        <span class="tip-icon">👆</span>
+        Click any word to hear it speak!
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">⌨️</span>
+        Press SPACEBAR to play or pause
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">🎛️</span>
+        Adjust speed and pauses to match your reading level
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">🌟</span>
+        Watch the highlighted word - that's what's being read!
+      </div>
+    </div>
+  </div>
+
+<!-- The 'defer' attribute ensures this script runs after the page is loaded -->
+<script src="script.js" defer></script>
+
+</body>
+</html>
