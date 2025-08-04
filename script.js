@@ -283,11 +283,11 @@ function highlightWord(index) {
   const wordSpan = textCanvas.querySelector(`[data-index='${index}']`);
   if (wordSpan) {
     wordSpan.classList.add("highlight");
-    wordSpan.scrollIntoView({ 
+    /*wordSpan.scrollIntoView({ 
       behavior: 'smooth', 
       block: 'center',
       inline: 'center'
-    });
+    });*/
   }
 }
 
@@ -336,3 +336,4 @@ function init() {
 }
 
 init(); // Run initialization functions when the script loads
+
